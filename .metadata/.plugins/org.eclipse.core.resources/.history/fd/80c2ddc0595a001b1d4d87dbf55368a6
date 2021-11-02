@@ -1,0 +1,144 @@
+package DoAn;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
+
+public class GiaoDien {
+	public static Connection getConnection() {
+
+		try {
+			String Url = "jdbc:sqlserver://MSI\\SQLEXPRESS:1433;databaseName=Qlyshop;integratedSecurity=true";
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			Connection connection = DriverManager.getConnection(Url);
+			Statement stmt;
+			return connection;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static void main(String[] args) {
+		Connection con = getConnection();
+		Statement stmt = con.createStatement();
+		if (con != null)
+			System.out.println("successfuly!");
+		else
+			System.out.println("Fail");
+		    JFrame f;
+			f = new JFrame();
+			f.setBounds(100, 100, 780, 693);
+			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			f.getContentPane().setLayout(new GridLayout(0, 1, 0, 0));
+			
+			JPanel panel = new JPanel();
+			f.getContentPane().add(panel);
+			
+			JButton b_addsupply = new JButton("Add New Supply");
+			b_addsupply.setBackground(Color.PINK);
+			b_addsupply.setForeground(Color.BLACK);
+			b_addsupply.setBounds(10, 490, 140, 62);
+			b_addsupply.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+				}
+			});
+			panel.setLayout(null);
+			panel.add(b_addsupply);
+			
+			JButton b_taobill = new JButton("New Bill");
+			b_taobill.setBackground(Color.PINK);
+			b_taobill.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
+			b_taobill.setBounds(10, 584, 140, 62);
+			panel.add(b_taobill);
+			
+			JButton b_viewbillday = new JButton("View Bill(Today)");
+			b_viewbillday.setBackground(Color.PINK);
+			b_viewbillday.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
+			b_viewbillday.setBounds(322, 584, 140, 62);
+			panel.add(b_viewbillday);
+			
+			JButton b_delete = new JButton("Delete Supply");
+			b_delete.setBackground(Color.PINK);
+			b_delete.setBounds(322, 490, 140, 62);
+			panel.add(b_delete);
+			
+			JButton b_seeincome = new JButton("Profit Analysis");
+			b_seeincome.setBackground(Color.PINK);
+			b_seeincome.setBounds(616, 584, 140, 62);
+			panel.add(b_seeincome);
+			
+			JButton b_findbill = new JButton("Find Bill");
+			b_findbill.setBackground(Color.PINK);
+			b_findbill.setBounds(616, 490, 140, 62);
+			panel.add(b_findbill);
+			
+			JLabel titlelb = new JLabel("Clothing store management system");
+			titlelb.setBackground(Color.DARK_GRAY);
+			titlelb.setForeground(Color.BLACK);
+			titlelb.setHorizontalAlignment(SwingConstants.CENTER);
+			titlelb.setFont(new Font("Tahoma", Font.PLAIN, 35));
+			titlelb.setBounds(104, 10, 584, 83);
+			panel.add(titlelb);
+			
+			Vector data = new Vector();
+			try {
+			    stmt = con.createStatement();
+			    ResultSet rs = stmt.executeQuery("SELECT * FROM Clothes");
+			    ResultSetMetaData metaData = rs.getMetaData();
+			    int columns = metaData.getColumnCount();
+			    while (rs.next()) {
+			       Vector row = new Vector(columns);
+			       for (int i = 1; i <= columns; i++) {
+			        row.addElement(rs.getObject(i));
+			       }
+			       data.addElement(row);
+			    }
+			} catch (SQLException e) {
+			    e.printStackTrace();
+			}
+			Vector columnNames = new Vector();
+			columnNames.addElement("ClothesID");
+			columnNames.addElement("ClothesName");
+			columnNames.addElement("ClothesBuyPrice");
+			columnNames.addElement("ClothesSellPrice");
+			columnNames.addElement("Quantity");
+			DefaultTableModel model = new DefaultTableModel();
+			JTable supplytb = new JTable(data, columnNames);
+			supplytb.setBounds(10, 155, 746, 291);	
+			panel.add(supplytb);
+			
+			JLabel lblNewLabel = new JLabel("Current Supply");
+			lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+			lblNewLabel.setBounds(10, 120, 183, 25);
+			panel.add(lblNewLabel);
+		
+			
+			f.setVisible(true);
+}
+}

@@ -1,0 +1,143 @@
+package Menu;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.SpringLayout;
+import java.awt.GridLayout;
+import javax.swing.JTable;
+import java.awt.Color;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.JSeparator;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+
+public class MainMenu {
+	private static JTextField tf1;
+	private static JTextField tf2;
+	private static JTextField tf4;
+	private static JTextField tf5;
+	private static JTextField tf6;
+	private static JTextField tf7;
+	private static final Action action = new SwingAction();
+	private static JTextField tf3;
+	 public MainMenu() {
+		 
+	 }
+	public static void main(String[] args) {
+		JFrame f;
+		f = new JFrame();
+		f.getContentPane().setLayout(null);
+		
+		JLabel ulb = new JLabel("Update Clothes");
+		ulb.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		ulb.setBounds(127, 10, 271, 46);
+		f.getContentPane().add(ulb);
+		
+		JLabel lb1 = new JLabel("Clothes ID");
+		lb1.setFont(new Font("Tahoma", Font.BOLD, 17));
+		lb1.setBounds(10, 90, 140, 40);
+		f.getContentPane().add(lb1);
+		
+		tf1 = new JTextField();
+		tf1.setBounds(183, 90, 215, 40);
+		f.getContentPane().add(tf1);
+		tf1.setColumns(10);
+		
+		JButton search = new JButton("Search");
+		search.setAction(action);
+		search.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		search.setBounds(420, 90, 85, 40);
+		f.getContentPane().add(search);
+		
+		JLabel lb2 = new JLabel("Clothes ID");
+		lb2.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lb2.setBounds(10, 165, 100, 50);
+		f.getContentPane().add(lb2);
+		
+		JSeparator se1 = new JSeparator();
+		se1.setBounds(0, 153, 546, 2);
+		f.getContentPane().add(se1);
+		
+		tf2 = new JTextField();
+		tf2.setColumns(10);
+		tf2.setBounds(227, 165, 215, 40);
+		f.getContentPane().add(tf2);
+		
+		JLabel lb3 = new JLabel("Buy Price");
+		lb3.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lb3.setBounds(10, 283, 140, 50);
+		f.getContentPane().add(lb3);
+		
+		JLabel lb4 = new JLabel("Sell Price");
+		lb4.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lb4.setBounds(10, 343, 140, 50);
+		f.getContentPane().add(lb4);
+		
+		JLabel lb5 = new JLabel("Buy Quantity");
+		lb5.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lb5.setBounds(10, 403, 140, 50);
+		f.getContentPane().add(lb5);
+		
+		JLabel lb6 = new JLabel("Remain Quantity");
+		lb6.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lb6.setBounds(10, 463, 163, 50);
+		f.getContentPane().add(lb6);
+		
+		tf4 = new JTextField();
+		tf4.setColumns(10);
+		tf4.setBounds(227, 283, 215, 40);
+		f.getContentPane().add(tf4);
+		
+		tf5 = new JTextField();
+		tf5.setColumns(10);
+		tf5.setBounds(227, 343, 215, 40);
+		f.getContentPane().add(tf5);
+		
+		tf6 = new JTextField();
+		tf6.setColumns(10);
+		tf6.setBounds(227, 403, 215, 40);
+		f.getContentPane().add(tf6);
+		
+		tf7 = new JTextField();
+		tf7.setColumns(10);
+		tf7.setBounds(227, 463, 215, 40);
+		f.getContentPane().add(tf7);
+		
+		JButton updateb = new JButton("Update");
+		updateb.setBounds(73, 542, 100, 50);
+		f.getContentPane().add(updateb);
+		
+		JButton cancelb = new JButton("Cancel");
+		cancelb.setBounds(342, 542, 100, 50);
+		f.getContentPane().add(cancelb);
+		
+		JLabel lb7 = new JLabel("Clothes Name");
+		lb7.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lb7.setBounds(10, 223, 150, 50);
+		f.getContentPane().add(lb7);
+		
+		tf3 = new JTextField();
+		tf3.setColumns(10);
+		tf3.setBounds(227, 223, 215, 40);
+		f.getContentPane().add(tf3);
+	}
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "SwingAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
+	}
+}

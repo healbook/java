@@ -1,0 +1,133 @@
+package Menu;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.SpringLayout;
+import java.awt.GridLayout;
+import javax.swing.JTable;
+import java.awt.Color;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.JSeparator;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+
+public class MainMenu {
+	private static final Action action = new SwingAction();
+	private static JTextField textField;
+	private static JTextField textField_1;
+	private static JTextField textField_2;
+	private static JTextField textField_3;
+	private static JTextField textField_4;
+	 public MainMenu() {
+		 
+	 }
+	public static void main(String[] args) {
+		JFrame f;
+		f = new JFrame();
+		f.getContentPane().setLayout(null);
+		
+		JLabel lb = new JLabel("BILLING");
+		lb.setFont(new Font("Candara Light", Font.PLAIN, 60));
+		lb.setBounds(10, 10, 310, 80);
+		f.getContentPane().add(lb);
+		
+		JLabel datelb = new JLabel("Date:");
+		datelb.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		datelb.setBounds(940, 10, 50, 35);
+		f.getContentPane().add(datelb);
+		
+		JLabel lblTime = new JLabel("Time:");
+		lblTime.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblTime.setBounds(940, 55, 55, 35);
+		f.getContentPane().add(lblTime);
+		
+		JLabel lblNewLabel = new JLabel("Customer Detail:");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setBounds(10, 100, 150, 50);
+		f.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("ID:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblNewLabel_1.setBounds(10, 160, 65, 35);
+		f.getContentPane().add(lblNewLabel_1);
+		
+		textField = new JTextField();
+		textField.setBounds(39, 160, 75, 35);
+		f.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Name:");
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblNewLabel_1_1.setBounds(120, 160, 65, 35);
+		f.getContentPane().add(lblNewLabel_1_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(180, 160, 250, 35);
+		f.getContentPane().add(textField_1);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("ContactNo:");
+		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblNewLabel_1_1_1.setBounds(440, 160, 100, 35);
+		f.getContentPane().add(lblNewLabel_1_1_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(540, 160, 160, 35);
+		f.getContentPane().add(textField_2);
+		textField_2.setColumns(10);
+		
+		JLabel lblNewLabel_1_1_1_1 = new JLabel("Email:");
+		lblNewLabel_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblNewLabel_1_1_1_1.setBounds(710, 160, 65, 35);
+		f.getContentPane().add(lblNewLabel_1_1_1_1);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(770, 160, 160, 35);
+		f.getContentPane().add(textField_3);
+		
+		JLabel lblNewLabel_1_1_1_1_1 = new JLabel("Address:");
+		lblNewLabel_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblNewLabel_1_1_1_1_1.setBounds(940, 160, 85, 35);
+		f.getContentPane().add(lblNewLabel_1_1_1_1_1);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(1020, 163, 350, 35);
+		f.getContentPane().add(textField_4);
+		
+		JLabel datelb_1 = new JLabel("Date:");
+		datelb_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		datelb_1.setBounds(1050, 10, 90, 35);
+		f.getContentPane().add(datelb_1);
+		
+		JLabel datelb_2 = new JLabel("Date:");
+		datelb_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		datelb_2.setBounds(1050, 55, 90, 35);
+		f.getContentPane().add(datelb_2);
+		
+		JLabel lblClothesDetail = new JLabel("Clothes Detail:");
+		lblClothesDetail.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblClothesDetail.setBounds(10, 205, 150, 50);
+		f.getContentPane().add(lblClothesDetail);
+	}
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "SwingAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
+	}
+}

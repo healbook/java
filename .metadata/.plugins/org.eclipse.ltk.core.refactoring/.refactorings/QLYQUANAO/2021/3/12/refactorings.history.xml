@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 2 elements to &apos;QLYQUANAO/Image&apos;&#x0D;&#x0A;- Original project: &apos;QLYQUANAO&apos;&#x0D;&#x0A;- Destination element: &apos;QLYQUANAO/Image&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     DoAn.UpdateClothes.java&#x0D;&#x0A;     DoAn.UpdateCustomer.java&#x0D;&#x0A;- Update references to refactored element" description="Move compilation units" destination="/Image" element1="/src&lt;DoAn{UpdateClothes.java" element2="/src&lt;DoAn{UpdateCustomer.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1616065170012" units="2" version="1.0"/>
+</session>

@@ -1,0 +1,33 @@
+package Chuong11;
+import java.util.Scanner;
+
+public class Bai12 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nháº­p sá»‘ lÆ°á»£ng pháº§n tá»­:");
+		int n=sc.nextInt();
+		
+		int Array[] = new int[n];
+		for(int i=0;i<n;i++) {
+			System.out.println("\nNháº­p pháº§n tá»­ ["+i+"] :");
+			Array[i]=sc.nextInt();
+		}
+		System.out.println("CÃ�C PHáº¦N Tá»¬ TRONG Máº¢NG LÃ€:");
+		for(int i=0;i<Array.length ;i++) {
+			System.out.println("\t"+Array[i]);
+		}
+		int max=Array[0];
+		int count=0;
+		for(int item : Array) {
+			if(max == item ) {
+				count++;
+			}
+			else if(max < item ) {
+				max = item;
+				count=1;
+			}
+		}
+		System.out.println("Sá»‘ láº§n xuáº¥t hiá»‡n pháº§n tá»­ lá»›n nháº¥t trong máº£ng lÃ :"+count);
+	}
+}
